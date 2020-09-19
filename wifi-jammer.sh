@@ -54,6 +54,7 @@ apt-get install pv
 apt-get install figlet
 apt-get install -y aircrack-ng
 apt-get install toilet
+apt-get install xterm
 sleep 1
 
 clear
@@ -158,9 +159,9 @@ toilet -f term -F border "BSSID: $BSSID          CH: $CH" | lolcat
 
 printf "\n"
 
-xterm -hold -e "airodump-ng -c $CH --bssid $BSSID $network_interface$mon" &
+timeout 3 xterm -hold -e "airodump-ng -c $CH --bssid $BSSID $network_interface$mon" &
 
-echo "Your Channel is Selected, Please Stop The xterminal(Ctrl + C)!" | pv -qL 20 | lolcat
+echo "Your Channel is Selected, Please Wait...!" | pv -qL 20 | lolcat
 printf "\n"
 sleep 1
 
