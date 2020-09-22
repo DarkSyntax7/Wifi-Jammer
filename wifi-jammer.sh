@@ -48,7 +48,7 @@ sleep 3
 
 printf "\n"
 
-apt-get install lolcat
+pip install lolcat
 apt-get install ruby
 apt-get install pv
 apt-get install figlet
