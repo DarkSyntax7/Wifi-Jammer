@@ -48,8 +48,21 @@ sleep 3
 
 printf "\n"
 
-pip install lolcat
+
 apt-get install ruby
+
+FILE=lolcat-master
+if [ -d "$FILE" ]; then
+echo "$FILE Already Exist!."
+else
+wget https://github.com/busyloop/lolcat/archive/master.zip
+unzip master.zip
+rm master.zip
+cd lolcat-master/bin/
+gem install lolcat
+cd ..
+fi
+
 apt-get install pv
 apt-get install figlet
 apt-get install -y aircrack-ng
